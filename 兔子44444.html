@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 260px;
+				height: 260px;
+				position: relative;
+				margin: 100px auto;
+			}
+			.img,.text{
+				width: 260px;
+				height: 260px;
+				position: absolute;
+				top: 0;left: 0;
+				border-radius:100%;
+			}
+			.text{
+				background:rgba(0,0,0,0.5);
+				transform:translateX(-100%);
+				transition: 0.3s;
+				opacity: 0;
+			}
+			.img img{
+				width: 260px;
+				height: 260px;
+				border-radius:100%;
+			}
+			.img::before{
+				content:"";
+				display:block;
+				width: 260px;height: 260px;
+				border: 15px solid rgba(255,255,255,0.5);
+				position: absolute;				
+				box-sizing:border-box;
+				top: 0px;left: 0px;				
+				border-radius:100%;
+				
+				
+			}
+			.img{
+				transition: 0.3s 0.1s;
+				z-index: 4;
+			}
+			.box:hover .img{
+				transform:translateX(100%) ;
+				opacity: 0;
+			}
+			.box:hover .text{
+				opacity:1;
+				transform:translateX(0);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="img">
+				<img src="img/tuzi.png"/>
+			</div>
+			<div class="text"></div>
+		</div>
+
+	</body>
+</html>
